@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthContext.js'; // AuthContext 가져오기
+import '../css/login.css';
 
 const Login = () => {
   const { handleLogin } = useContext(AuthContext); // 로그인 핸들러를 가져옴
@@ -21,7 +22,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div class="joinlogin contents">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -40,7 +41,7 @@ const Login = () => {
         />
         <button type="submit">Login</button>
       </form>
-      <p>Don't have an account? <a href="/signup">Sign up</a></p>
+      <p>Don't have an account? <a class="join_bold" href="/signup">Sign up</a></p>
     </div>
   );
 };
