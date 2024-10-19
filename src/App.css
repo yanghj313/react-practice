@@ -1,0 +1,78 @@
+*{
+  margin:0;
+  padding:0;
+  list-style: none;
+  font-family: 'Pretendard', sans-serif;
+  overflow: hidden;
+ 
+}
+
+#wrap{
+  width:100%;
+  height:auto;
+  margin:0 auto;
+}
+
+.contents{
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+  position:relative;
+  background: linear-gradient(45deg, #49a09d, #5f2c82);
+}
+
+button{
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  color: #d6ee4c;
+}
+
+button:disabled {
+  color: #e4e4e4;
+}
+
+a{
+  list-style: none;
+  text-decoration-line: none;
+}
+
+button.account,button.sales   {
+  text-transform: uppercase;
+  padding: 10px 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: 0px;
+  border-radius: 3px;
+  box-shadow: 0 3px 14px rgba(50, 50, 93, .1);
+  transition: all 0.1s linear;
+  font-size: 12px;
+  outline: none;
+}
+button.account {
+  color: white;
+  background-color: #7594e5;
+}
+button.account:hover {
+  transform: translateY(-2px);
+  background: #77a6f8;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+}
+button.account:active {
+  transform: translateY(0px);
+  background: #7594e5;
+}
+button.sales {
+  color: #7594e5;
+  background: white;
+}
+button.sales:hover {
+  transform: translateY(-2px);
+  color: #77a6f8;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+}
+button.sales:active {
+  transform: translateY(0px);
+  color: #7594e5;
+}

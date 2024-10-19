@@ -1,0 +1,20 @@
+.list_mov{
+    width: 1000px;
+    height: 860px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.mov_list{
+    height: 800px;
+    display: flex;
+}
+
+.null_movie{
+    margin: 120px 0;
+    width: 280px;
+    height: 500px;
+   
+}
+
+.mov_list img{padding: 16px 0;}

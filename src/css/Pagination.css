@@ -1,0 +1,29 @@
+#pagiantion{
+    width:70%;
+    height:10%;
+    display: block;
+    background-color: blueviolet;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.page{
+    width:40px;
+    height: 40px;
+    display: inline-block;
+    background-color: brown;
+    margin: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.page:hover{
+    background-color: aliceblue;
+}
+
+.active{
+    background-color: aliceblue;
+}

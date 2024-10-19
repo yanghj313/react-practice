@@ -1,0 +1,63 @@
+#boardlist{
+    margin: 0 auto;
+    width: 1000px;
+    height: 860px;
+ }
+ 
+ #boardlist table{
+     width: 1000px;
+     border-collapse: collapse;
+     overflow: hidden;
+     box-shadow: 0 0 20px rgba(0,0,0,0.1);
+ }
+ 
+ #boardlist td a {color: #fff;}
+ 
+ #boardlist th, #boardlist td {
+     padding: 10px;
+     background-color: rgba(255, 255, 255, 0.2);
+     color: #fff;
+ }
+ #boardlist th {
+     text-align: left;
+ }
+ #boardlist thead th {
+     background-color: #55608f;
+ }
+ #boardlist tbody tr:hover {
+     background-color: rgba(255, 255, 255, 0.3);
+ }
+ #boardlist tbody td {
+     position: relative;
+ }
+ #boardlist tbody td:hover:before {
+     content: "";
+     position: absolute;
+     left: 0;
+     right: 0;
+     top: -9999px;
+     bottom: -9999px;
+     background-color: rgba(255, 255, 255, 0.2);
+     z-index: -1;
+ }
+ 
+ #boardlist button.sales{float:right;}
+ 
+ #boardlist .number_chap{display:block;margin:20px auto;text-align: center;}
+
+ #boardlist .number_chap .numb_set{border-radius: 50%;width:30px;height: 30px;text-align: center;}
+
+ #boardlist .search-form {height: 20px;}
+
+ #boardlist .search-form .search-input{
+    font-size: 13px;
+    color: gray;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: block;
+    line-height: 20px; 
+  }
+  #table_btn{display: flex;width: 100%;height: 40px;margin: 20px 0; justify-content: space-between;}
+
+  

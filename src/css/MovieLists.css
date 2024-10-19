@@ -1,0 +1,18 @@
+#movie_listwrap h1{
+    padding: 120px 0 30px;
+    font-family: 'Jost', sans-serif;
+    font-size: 50px;
+}
+
+#movie_listwrap ul li{
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#movie_listwrap ul li svg{
+margin-right: 10px;
+}
+
+#movie_listwrap ul li:hover{
+    color:rgb(220, 204, 235)
+}

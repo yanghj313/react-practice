@@ -1,0 +1,41 @@
+#board {
+    width:90%;
+    margin: 0px auto;
+    padding: 20px 0 0 0;
+}
+
+#board span{
+    height: 30px;
+    display: block;
+    float: left;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 15px;
+    box-sizing: border-box;
+    line-height: 30px;
+}
+
+#board span:nth-child(1){
+    background-color: bisque;
+    width: 10%;
+}
+
+#board span:nth-child(2){
+    background-color: rgb(34, 136, 47);
+    width: 50%;
+}
+
+#board span:nth-child(3){
+    background-color: rgb(126, 29, 190);
+    width: 10%;
+}
+
+#board span:nth-child(4){
+    background-color: rgb(187, 45, 80);
+    width: 20%;
+}
+
+#board span:nth-child(5){
+    background-color: rgb(174, 204, 65);
+    width: 10%;
+}
