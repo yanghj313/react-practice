@@ -1,4 +1,4 @@
-import React, { Component, useContext } from "react";
+import React, { Component } from "react";
 import "../css/Header.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -57,16 +57,18 @@ class Header extends Component {
   };
 
   render() {
-    const { isLoggedIn, handleLogout } = this.context; // AuthContext에서 상태와 로그아웃 핸들러 가져오기
+    const { isLoggedIn, handleLogout } = this.context; // AuthContext에서 로그인 상태와 로그아웃 핸들러 가져오기
 
     return (
       <div id="header">
         <div id="inner_wrap">
+          {/* 메뉴 항목 */}
           <ul className="menu">
             <li><a href="#this" onClick={this.moveHome}>Home</a></li>
             <li><a href="#this" onClick={this.moveProfile}>Profile</a></li>
             <li><a href="#this" onClick={this.moveBoardList}>Board</a></li>
             <li><a href="#this" onClick={this.moveMovieMain}>MovieList</a></li>
+            <li><a href="#this" onClick={() => window.location.href = "/browse-movies"}>Browse Movies</a></li> {/* 영화 탐색 메뉴 추가 */}
           </ul>
 
           {/* 로그인 상태에 따라 다른 버튼을 표시 */}
@@ -85,6 +87,7 @@ class Header extends Component {
             )}
           </div>
 
+          {/* 검색 입력 */}
           <div id="search_input">
             <form className="search-form" onSubmit={(e) => e.preventDefault()}>
               <button type="button" className="search-button" onClick={this.searchMovie}>

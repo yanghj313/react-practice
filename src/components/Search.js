@@ -55,7 +55,7 @@ class Search extends Component {
     return (
       <div id='search' className='contents'>
         {errorMessage ? (
-          <p>{errorMessage}</p>  // 에러 메시지 출력
+          <div class="wran_wrap"><p>{errorMessage}</p></div>  // 에러 메시지 출력
         ) : (
           <div className="movie-results">
             {/* 검색 결과 개수와 검색어 표시 */}
@@ -79,7 +79,9 @@ class Search extends Component {
                 </div>
               ))
             ) : (
+                <div class="wran_wrap">
               <p className="error">No movies found.</p>
+              </div>
             )}
           </div>
         )}

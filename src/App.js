@@ -13,6 +13,7 @@ import MovieMain from './components/MovieMain.js';
 import Login from './components/Login.js';
 import Signup from './components/Signup.js';
 import { AuthContext } from './components/AuthContext'; // AuthContext 가져오기
+import BrowseMovies from './components/BrowseMovies.js'; // 영화 탐색 컴포넌트 추가
 import 'font-awesome/css/font-awesome.min.css';
 
 class App extends Component {
@@ -66,6 +67,7 @@ class App extends Component {
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/search" element={<Search />} />
+              
               {/* 게시판 관련 경로 */}
               <Route path="/main" element={<Main />} />
               
@@ -75,11 +77,18 @@ class App extends Component {
                 element={isLoggedIn ? <BoardWrite /> : <Navigate to="/login" />} 
               />
               
-              <Route path="/:id" element={<BoardDetail />} />
+              {/* 게시글 상세 페이지 경로 */}
+              <Route path="/post/:id" element={<BoardDetail />} />
+
               {/* 영화 관련 경로 */}
               <Route path="/moviemain" element={<MovieMain />} />
+
+              {/* YTS 영화 탐색 경로 */}
+              <Route path="/browse-movies" element={<BrowseMovies />} /> {/* 새 경로 추가 */}
+
               {/* 로그인 페이지 */}
               <Route path="/login" element={<Login />} />
+              
               {/* 회원가입 페이지 */}
               <Route path="/signup" element={<Signup />} />
             </Routes>

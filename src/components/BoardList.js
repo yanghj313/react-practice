@@ -43,7 +43,7 @@ const BoardList = () => {
 
   if (loading) {
     return (
-      <div class="body_loading">
+      <div className="body_loading">
       <div className="container">
         <div className="dot dot-1"></div>
         <div className="dot dot-2"></div>
@@ -112,7 +112,7 @@ const BoardList = () => {
         <tbody>
           {currentPosts.map(post => (
             <tr key={post.id}>
-              <td><Link to={`/${post.id}`}>{post.title}</Link></td>
+              <td><Link to={`/post/${post.id}`}>{post.title}</Link></td> {/* 경로 수정 */}
               <td>Writer {post.userId}</td> 
               <td>{Math.floor(Math.random() * 1000)}</td> 
               <td>{new Date().toLocaleDateString()}</td>
