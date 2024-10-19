@@ -41,7 +41,26 @@ const BoardList = () => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <div class="body_loading">
+      <div className="container">
+        <div className="dot dot-1"></div>
+        <div className="dot dot-2"></div>
+        <div className="dot dot-3"></div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
+            </filter>
+          </defs>
+        </svg>
+      </div>
+      </div>
+    );
+  }
 
   // 페이지 버튼 배열 생성
   const pageNumbers = [];
