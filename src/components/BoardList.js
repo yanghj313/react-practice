@@ -1,20 +1,23 @@
 import '../css/BoardList.css';
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from './AuthContext'; // AuthContext 가져오기
 
 const BoardList = () => {
+  const { isLoggedIn } = useContext(AuthContext); // 로그인 여부 가져오기
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const postsPerPage = 10; // 페이지당 게시글 수
   const [currentPage, setCurrentPage] = useState(1);
   const [pageLimit] = useState(10); // 표시할 페이지 버튼 수
+  const navigate = useNavigate(); // 페이지 이동을 위한 네비게이트
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-        if (!response.ok) throw new Error('네트워크 오류 발생');
+        if (!response.ok) throw new Error('Network Error');
         const data = await response.json();
         setPosts(data);
       } catch (error) {
@@ -50,44 +53,56 @@ const BoardList = () => {
   const startPage = Math.max(1, currentPage - Math.floor(pageLimit / 2));
   const endPage = Math.min(totalPages, startPage + pageLimit - 1);
 
+  // 글쓰기 버튼 클릭 시 동작
+  const handleWriteClick = () => {
+    if (isLoggedIn) {
+      navigate('/write'); // 로그인 상태라면 /write 페이지로 이동
+    } else {
+      alert('Please log in to write a post.'); // 로그인되지 않은 경우 경고 메시지
+      navigate('/login'); // 로그인 페이지로 이동
+    }
+  };
+
   return (
     <div id="boardlist">
       <h1>Movie Board</h1>
       {/* 검색 입력 필드 */}
-       <div id="table_btn">
-      <form class="search-form">      
-      <input 
-        type="text" 
-        placeholder="Search" 
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)} class="search-input"
-      />
-       </form>
-      <button class="write_go sales"><Link to="/write">Write</Link></button>
+      <div id="table_btn">
+        <form className="search-form">
+          <input 
+            type="text" 
+            placeholder="Search" 
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)} 
+            className="search-input"
+          />
+        </form>
+        <button className="write_go sales" onClick={handleWriteClick}>
+          Write
+        </button>
       </div>
       <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Writer</th>
-                        <th>View</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-       <tbody>
-        {currentPosts.map(post => (
-          <tr key={post.id}>
-            <td><Link to={`/${post.id}`}>{post.title}</Link></td>           
-            <td>writer{post.userId}</td> 
-            <td>{Math.floor(Math.random() * 1000)}</td> 
-            <td>{new Date().toLocaleDateString()}</td>
-           
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Writer</th>
+            <th>View</th>
+            <th>Date</th>
           </tr>
-        ))}
-      </tbody>
+        </thead>
+        <tbody>
+          {currentPosts.map(post => (
+            <tr key={post.id}>
+              <td><Link to={`/${post.id}`}>{post.title}</Link></td>
+              <td>Writer {post.userId}</td> 
+              <td>{Math.floor(Math.random() * 1000)}</td> 
+              <td>{new Date().toLocaleDateString()}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
       {/* 이전 및 다음 버튼 */}
-      <div class="number_chap">
+      <div className="number_chap">
         <button 
           onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
@@ -97,7 +112,7 @@ const BoardList = () => {
 
         {/* 나열식 페이지네이션 */}
         {pageNumbers.slice(startPage - 1, endPage).map(number => (
-          <button class="numb_set"
+          <button className="numb_set"
             key={number}
             onClick={() => setCurrentPage(number)}
             disabled={currentPage === number}

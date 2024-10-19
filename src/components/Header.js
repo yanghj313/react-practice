@@ -1,7 +1,8 @@
-import { Component } from "react";
+import React, { Component, useContext } from "react";
 import "../css/Header.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { AuthContext } from './AuthContext'; // AuthContext 가져오기
 
 class Header extends Component {
   constructor(props) {
@@ -56,6 +57,8 @@ class Header extends Component {
   };
 
   render() {
+    const { isLoggedIn, handleLogout } = this.context; // AuthContext에서 상태와 로그아웃 핸들러 가져오기
+
     return (
       <div id="header">
         <div id="inner_wrap">
@@ -65,8 +68,25 @@ class Header extends Component {
             <li><a href="#this" onClick={this.moveBoardList}>Board</a></li>
             <li><a href="#this" onClick={this.moveMovieMain}>MovieList</a></li>
           </ul>
+
+          {/* 로그인 상태에 따라 다른 버튼을 표시 */}
+          <div className="auth-buttons">
+            {isLoggedIn ? (
+              <>
+                {/* 로그아웃 버튼 */}
+                <button onClick={handleLogout}>Logout</button>
+              </>
+            ) : (
+              <>
+                {/* 로그인 및 회원가입 버튼 */}
+                <button onClick={() => window.location.href = '/login'}>Login</button>
+                <button onClick={() => window.location.href = '/signup'}>Join</button>
+              </>
+            )}
+          </div>
+
           <div id="search_input">
-          <form className="search-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="search-form" onSubmit={(e) => e.preventDefault()}>
               <button type="button" className="search-button" onClick={this.searchMovie}>
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
               </button>
@@ -85,5 +105,8 @@ class Header extends Component {
     );
   }
 }
+
+// AuthContext 연결
+Header.contextType = AuthContext;
 
 export default Header;
