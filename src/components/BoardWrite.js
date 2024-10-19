@@ -26,7 +26,7 @@ const BoardWrite = () => {
       });
 
       if (!response.ok) {
-        throw new Error('게시글 작성 실패');
+        throw new Error('Fail');
       }
 
       const data = await response.json();

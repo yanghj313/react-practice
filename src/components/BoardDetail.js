@@ -30,15 +30,16 @@ import { useParams, useNavigate } from 'react-router-dom';
     navigate('/main'); // 게시판 목록으로 돌아가기
   };
 
-  if (loading) return <div>로딩 중...</div>; // 데이터 로딩 중 표시
-  if (!post) return <div>게시글을 찾을 수 없습니다.</div>; // 게시글이 없을 경우 표시
+  if (loading) return <div  class="loading">Loading...</div>; // 데이터 로딩 중 표시
+  if (!post) return <div class="wraning">Not found!</div>; // 게시글이 없을 경우 표시
 
   return (
-    <div>
-      <h2>게시글 상세보기</h2>
+    <div class="contents">
+    <div id="detail_wrap">
       <h3>{post.title}</h3>
       <p>{post.body}</p>
-      <button onClick={handleBack}>목록으로 돌아가기</button>
+      <button onClick={handleBack}> <i className="fas fa-list" style={{ marginRight: '8px' }}></i> Go to list</button>
+    </div>
     </div>
   );
 };

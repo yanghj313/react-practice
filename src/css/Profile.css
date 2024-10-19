@@ -1,7 +1,35 @@
-#profile{
-    width:1800px;
-    height: 960px;
-    position: relative;
-    background-color: aqua;
+#profile {
+  height: 960px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.content_warp {
+  margin: 120px auto;
+  width: 1400px;
+  text-align: center;
+  color: #fff;
+}
+
+.content_warp h4{
+    font-family: 'Jost'; 
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.content_warp p {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.p_img{
     margin: 0 auto;
+}
+
+.p_img img{
+    max-height: 100%;
+    height: auto;
+    width:50%;
+    
 }
