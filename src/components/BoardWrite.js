@@ -40,11 +40,11 @@ const BoardWrite = () => {
   };
 
   return (
-    <div>
-      <h2>게시글 작성</h2>
+    <div class="contents">
+    <div id="detail_wrap">
       <form onSubmit={handleSubmit}>
         <div>
-          <label>제목:</label>
+          <label>Title</label>
           <input
             type="text"
             value={title}
@@ -53,15 +53,16 @@ const BoardWrite = () => {
           />
         </div>
         <div>
-          <label>내용:</label>
+          <label>Contents</label>
           <textarea
             value={body}
             onChange={(e) => setBody(e.target.value)}
             required
           ></textarea>
         </div>
-        <button type="submit">작성</button>
+        <button type="submit"><i className="fas fa-pen" style={{ marginRight: '8px' }}></i>Write</button>
       </form>
+    </div>
     </div>
   );
 };
