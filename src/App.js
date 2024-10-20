@@ -25,11 +25,21 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    // 페이지 로드 시 localStorage에서 로그인 상태를 불러옴
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    this.setState({ isLoggedIn, users });
+  }
+
   // 회원 가입 처리
   handleSignup = (newUser) => {
-    this.setState(prevState => ({
-      users: [...prevState.users, newUser]
-    }));
+    this.setState(prevState => {
+      const updatedUsers = [...prevState.users, newUser];
+      // 회원 목록을 localStorage에 저장
+      localStorage.setItem('users', JSON.stringify(updatedUsers));
+      return { users: updatedUsers };
+    });
   };
 
   // 로그인 핸들러
@@ -39,6 +49,8 @@ class App extends Component {
 
     if (user) {
       this.setState({ isLoggedIn: true });
+      // 로그인 상태를 localStorage에 저장
+      localStorage.setItem('isLoggedIn', 'true');
       return true; // 로그인 성공
     } else {
       return false; // 로그인 실패
@@ -48,6 +60,8 @@ class App extends Component {
   // 로그아웃 핸들러
   handleLogout = () => {
     this.setState({ isLoggedIn: false });
+    // localStorage에서 로그인 상태 제거
+    localStorage.setItem('isLoggedIn', 'false');
   };
 
   render() {

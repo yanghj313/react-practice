@@ -57,14 +57,14 @@ class Search extends Component {
         {errorMessage ? (
           <div class="wran_wrap"><p>{errorMessage}</p></div>  // 에러 메시지 출력
         ) : (
-          <div className="movie-results">
+         <div className="movie_wrapper"> 
             {/* 검색 결과 개수와 검색어 표시 */}
             {movieList.length > 0 && (
               <p>
                 Your search for "<strong>{searchTerm}</strong>" returned {movieList.length} result{movieList.length > 1 ? 's' : ''}.
               </p>
             )}
-
+<div className="movie-results">
             {/* 검색 결과 목록 */}
             {movieList.length > 0 ? (
               movieList.map((movie) => (
@@ -83,7 +83,7 @@ class Search extends Component {
               <p className="error">No movies found.</p>
               </div>
             )}
-          </div>
+          </div></div>
         )}
       </div>
     );

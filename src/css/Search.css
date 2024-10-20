@@ -1,18 +1,30 @@
 
 #search{
-    padding:80px 0 30px;
     overflow:visible;
+    min-height: 100vh;
     margin: 0 auto;
     height: auto;
+    padding: 80px 0 100px 0;
 }
-
+.wran_wrap{
+    width:1800px;
+    margin: 0 auto;
+    text-align: center;
+}
 .error{
     margin-top: 120px;
     padding:120px 0 30px;
     font-family: 'Jost', sans-serif;
     font-size: 50px;
+    text-align: center;
+    width: 100%;
 }
-
+.movie_wrapper{
+    padding: 20px 0 50px;
+    width:1800px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
 .movie-card{
     display: flex;
     flex-direction: row;
@@ -26,11 +38,13 @@
 }
 
 .movie-results{
-    width:1200px;
-    margin: 120px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .wran_wrap{
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
 }
