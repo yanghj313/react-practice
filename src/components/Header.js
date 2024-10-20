@@ -65,10 +65,10 @@ class Header extends Component {
           {/* 메뉴 항목 */}
           <ul className="menu">
             <li><a href="#this" onClick={this.moveHome}>Home</a></li>
-            <li><a href="#this" onClick={this.moveProfile}>Profile</a></li>
+            <li><a href="#this" onClick={this.moveProfile}>About</a></li>
             <li><a href="#this" onClick={this.moveBoardList}>Board</a></li>
             <li><a href="#this" onClick={this.moveMovieMain}>MovieList</a></li>
-            <li><a href="#this" onClick={() => window.location.href = "/browse-movies"}>Browse Movies</a></li> {/* 영화 탐색 메뉴 추가 */}
+            <li><a href="#this" onClick={() => window.location.href = "/browse-movies"}>Browse</a></li> {/* 영화 탐색 메뉴 추가 */}
           </ul>
 
           {/* 로그인 상태에 따라 다른 버튼을 표시 */}
