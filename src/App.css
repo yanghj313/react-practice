@@ -1,26 +1,32 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   list-style: none;
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
 }
 
-#wrap{
-  width:100%;
-  height:auto;
-  margin:0 auto;
+#wrap {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
   position: relative;
 }
 
-.contents{
+.contents {
   display: block;
   height: 100vh;
-  position:relative;
+  position: relative;
   background: linear-gradient(45deg, #49a09d, #5f2c82);
   color: #fff;
 }
+.lottie_wrap {
+  height: auto;
+  z-index: 9;
+  top: 50%;
+  left: 82%;
+}
 
-button{
+button {
   border: 0;
   background-color: transparent;
   cursor: pointer;
@@ -31,20 +37,21 @@ button:disabled {
   color: #e4e4e4;
 }
 
-a{
+a {
   list-style: none;
   text-decoration-line: none;
 }
 
-button.account,button.sales   {
+button.account,
+button.sales {
   text-transform: uppercase;
   padding: 10px 20px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
   border: 0px;
   border-radius: 3px;
-  box-shadow: 0 3px 14px rgba(50, 50, 93, .1);
+  box-shadow: 0 3px 14px rgba(50, 50, 93, 0.1);
   transition: all 0.1s linear;
   font-size: 12px;
   outline: none;
@@ -56,7 +63,7 @@ button.account {
 button.account:hover {
   transform: translateY(-2px);
   background: #77a6f8;
-  box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 button.account:active {
   transform: translateY(0px);
@@ -69,7 +76,7 @@ button.sales {
 button.sales:hover {
   transform: translateY(-2px);
   color: #77a6f8;
-  box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 button.sales:active {
   transform: translateY(0px);

@@ -1,10 +1,12 @@
 import '../css/Profile.css';
 import slide4Imge from '../images/img_04.jpg';
+import LottiePlayer from './LottiePlayer.js';
 
 function Profile(){
     return(
         
         <div id="profile" class="contents">
+          <LottiePlayer></LottiePlayer>
           <div class="content_warp">
             <div class="p_img"><img src={slide4Imge} alt=""/></div>
             <h4>Hello! Welcome to 'Movie Shelter'!</h4>

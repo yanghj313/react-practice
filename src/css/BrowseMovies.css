@@ -1,81 +1,87 @@
-#browse_con{
+#browse_con {
   overflow: visible;
   height: auto;
   padding: 0 0 100px 0;
 }
 .browse-movies {
-    padding: 20px 0 50px;
-    width:1800px;
-    margin: 0 auto;
-    min-height: 100vh;
-  }
-
-  .browse-movies h1{
-    padding:120px 0 30px;
-    font-family: 'Jost', sans-serif;
-    font-size: 50px;
+  padding: 20px 0 50px;
+  width: 1800px;
+  margin: 0 auto;
+  min-height: 100vh;
 }
-  .movies{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    justify-content: space-between;
-    width: 100%;
-    
-  }
-  .search-bar {
-    margin-bottom: 20px;
-  }
-  
-  .search-bar input {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-  }
-  
-  .filters {
-    margin-bottom: 20px;
-  }
-  
-  .filters select, .filters input {
-    margin-right: 10px;
-    padding: 10px;
-    font-size: 16px;
-  }
-  
-  .movie-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .movie-card {
-    width: 200px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin: 10px 0;
-  }
-  
-  .movie-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .movie-card h3 {
-    font-size: 16px;
-    margin: 10px 0;
-  }
-  
-  .movie-card p {
-    font-size: 14px;
-    color: #aaa;
-  }
 
-  .body_loading{
-    height: 100vh;
-    background-color: #fff;
+.browse-movies h1 {
+  padding: 120px 0 30px;
+  font-family: "Jost", sans-serif;
+  font-size: 50px;
+}
+.movies {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  width: 100%;
+}
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+}
+.search-bar svg {
+  color: #aaa;
+  padding: 0 20px;
+}
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters select,
+.filters input {
+  margin-right: 10px;
+  font-size: 16px;
+  padding: 10px 0.5rem;
+  border-radius: 1px 1px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 1.5rem;
+  border-color: transparent;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.movie-card {
+  width: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 10px 0;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.movie-card h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.movie-card p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.body_loading {
+  height: 100vh;
+  background-color: #fff;
 }
 
 .container {
@@ -196,5 +202,3 @@
     z-index: 1;
   }
 }
-
-  

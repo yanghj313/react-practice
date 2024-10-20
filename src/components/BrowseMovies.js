@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../css/BrowseMovies.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const BrowseMovies = () => {
   const [movies, setMovies] = useState([]);  // 영화 목록 상태
@@ -61,12 +63,16 @@ const BrowseMovies = () => {
 
       {/* 검색 입력 */}
       <div className="search-bar">
+        <form className='search-form'>
         <input 
           type="text" 
           placeholder="Search for a movie..." 
           value={searchTerm}
           onChange={handleSearchChange}
+          className="search-input" 
         />
+        <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </form>
       </div>
 
       {/* 필터 옵션 */}

@@ -77,6 +77,7 @@ class App extends Component {
             handleSignup: this.handleSignup
           }}>
             <Header /> {/* 모든 컴포넌트가 AuthContext에 접근 가능 */}
+           
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile />} />
